@@ -1,0 +1,21 @@
+body {
+    margin: 30px;
+    background-color: rgba(240, 248, 255, 0.623);
+}
+
+span {
+    border-radius: 7px;
+    color: white;
+    padding: 0 4px;
+}
+
+.due-date {
+    margin-top: 30px;
+}
+ 
+.error1,
+.error2,
+.error3 {
+    color: red;
+    display: none;
+}

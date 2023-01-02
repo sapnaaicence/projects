@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+ 
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <h1>Add Task</h1>
+  <form class="needs-validation" novalidate onsubmit="return saveData()">
+    <div class="mb-3">
+      <div class="row">
+
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" required />
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="inputState" class="form-label">Task Category</label>
+          <select class="form-select" id="category" required>
+            <option value="0">Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <div class="invalid-feedback">This field is required.</div>
+
+        </div>
+
+        <div class="col-md-3">
+          <label for="inputState" class="form-label">Project</label>
+          <select class="form-select" id="project">
+            <option value="0">Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label class="form-label">Start Date</label>
+          <input class="form-control" type="date" id="start-date" required />
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Due Date</label>
+          <input class="form-control" type="date" id="due-date" required />
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-check due-date">
+            <input class="form-check-input" type="checkbox" id="no-due-date" />
+            <label class="form-check-label" for="no-due-date">Without due date</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="form-label">Assigned to</label>
+        <select class="form-select" id="assignTo" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <div id="editor" style="height: 200px;">
+        </div>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Other Details
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse m-4" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label">Label</label>
+                <select id="label" class="form-select" aria-label="Default select example">
+                  <option selected>Nothing selected</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Milestone</label>
+                <select class="form-select" id="milestone" aria-label="Default select example">
+                  <option selected>--</option>
+                  <option value="one">One</option>
+                  <option value="two">Two</option>
+                  <option value="three">Three</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Status</label>
+                <select class="form-select" id="status" aria-label="Default select example">
+                  <option selected>Status</option>
+                  <option value="incomplete">Incomplete</option>
+                  <option value="complete">Complete</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Priority</label>
+              <select class="form-select" id="priority" aria-label="Default select example">
+                <option selected>Select</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <div class="row g-3 m-2">
+              <div class="form-check col-md-3">
+                <input class="form-check-input" type="checkbox" id="make-private" />
+                <label class="form-check-label" for="make-private">
+                  Make Private <span>?</span>
+                </label>
+              </div>
+
+              <div class="form-check col-md-3">
+                <input class="form-check-input" type="checkbox" id="billiable" />
+                <label class="form-check-label" for="billiable">
+                  Billiable <span>?</span>
+                </label>
+              </div>
+              <div class="form-check col-md-3">
+                <input class="form-check-input" type="checkbox" id="time-estimate" />
+                <label class="form-check-label" for="time-estimate">
+                  Time Estimate
+                </label>
+              </div>
+            </div>
+            <div class="row g-3 m-2">
+              <div class="form-check col-md-3">
+                <input class="form-check-input" type="checkbox" id="repeat" />
+                <label class="form-check-label" for="repeat"> Repeat </label>
+              </div>
+              <div class="form-check col-md-3">
+                <input class="form-check-input" type="checkbox" id="dependent-to-other" />
+                <label class="form-check-label" for="dependent-to-other">
+                  Task is dependent on another task
+                </label>
+              </div>
+            </div>
+            <div id="time-show" style="display:none;">
+              <label class="form-label">Time Estimate 1</label>
+              <select class="form-select" id="time-estimate-dropdown" aria-label="Default select example">
+
+              </select>
+            </div>
+
+            <div class="row" id="repeat-show" style="display:none;">
+              <div class="col-md-3">
+                <label class="form-label">Repeat Dropdown</label>
+                <select class="form-select" id="repeat-dropdown" aria-label="Default select example">
+                  <option selected>NONE</option>
+                </select>
+              </div>
+
+              <div class="col-md-3" id="everyday-content" style="display: none;">
+                <label class="form-label">Every Day Time Field1</label>
+                <select class="form-select" id="everyDay-dropdown" aria-label="Default select example">
+
+                </select>
+              </div>
+
+              <div id="everyweek-content" style="display: none;">
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="every-week-mon" />
+                  <label class="form-check-label" for="every-week-mon">
+                    Monday
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="every-week-tue" />
+                  <label class="form-check-label" for="every-week-tue">
+                    Tuesday
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="every-week-wed" />
+                  <label class="form-check-label" for="every-week-wed">
+                    Wednesday
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="every-week-thu" />
+                  <label class="form-check-label" for="every-week-thu">
+                    Thursday
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="every-week-fri" />
+                  <label class="form-check-label" for="every-week-fri">
+                    Friday
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="every-week-sat" />
+                  <label class="form-check-label" for="every-week-sat">
+                    Saturday
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="every-week-sun" />
+                  <label class="form-check-label" for="every-week-sun">
+                    Sunday
+                  </label>
+                </div>
+
+
+                <div class="col-md-3">
+                  <label class="form-label">Every Week Time Field</label>
+                  <select class="form-select" id="everyWeek-dropdown" aria-label="Default select example">
+
+                  </select>
+                </div>
+
+              </div>
+
+              <div id="everymonth-content" style="display: none;">
+
+                <div class="col-md-3" id="everyday-content">
+                  <label class="form-label">Every Month Day</label>
+                  <select class="form-select" id="everyMonth-dropdown" aria-label="Default select example">
+
+                  </select>
+                </div>
+
+                <div>
+                  <label class="form-label">Every Month Time Field</label>
+                  <select class="form-select" id="everyMonthTime-dropdown" aria-label="Default select example">
+
+                  </select>
+                </div>
+
+              </div>
+
+              <div id="everyyear-content" style="display: none;">
+
+                <div class="col-md-3">
+                  <label class="form-label">Every Month List</label>
+                  <select class="form-select" id="everyMonthList-dropdown" aria-label="Default select example">
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="form-label">Every Month Days</label>
+                  <select class="form-select" id="everyMonthDays-dropdown" aria-label="Default select example">
+
+                  </select>
+                </div>
+
+                <div>
+                  <label class="form-label">Every Month Time Field</label>
+                  <select class="form-select" id="everyYearMonthTime-dropdown" aria-label="Default select example">
+
+                  </select>
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+            <div class="mb-3">
+              <label class="form-label">Add files</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px">
+        <button class="btn btn-primary" id="save-only">
+          Save</button>
+        <button class="btn btn-dark">Save and add more</button>
+        <button class="btn btn">Cancel</button>
+      </div>
+    </div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <!-- Include the Quill library -->
+  <script src="https://cdn.quilljs.com/1.1.6/quill.js"></script>
+  <script>
+    var quill = new Quill('#editor', {
+      theme: 'snow'
+    });
+  </script>
+</body>
+
+</html>
