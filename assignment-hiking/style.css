@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.tool-bar {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: rgba(128, 128, 128, 0.223); */
+    padding: 20px;
+}
+
+#col1 {
+    display: inline-block;
+}
+
+#logo {
+    padding: 10px 0 0 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #54524f;
+}
+
+#col2,
+nav,
+li {
+    display: inline-block;
+    font-size: 17px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #54524f;
+    font-weight: 700;
+    font-family: "Open Sans";
+    margin-right: 50px;
+}
+
+ul {
+    display: inline-block;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#search-bar {
+    display: inline-block;
+}
+
+.container-1 {
+    position: relative;
+    background-image: url("img/bg-img.png");
+    background-position-x: center;
+    background-repeat: no-repeat;
+    height: 956px;
+    background-size: cover;
+    background-origin: content-box;
+    width: 100%;
+
+    /* display: contents; */
+}
+
+
+
+form {
+    color: #555;
+    display: flex;
+    padding: 2px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    margin: 0 0 30px;
+}
+
+input[type=search]::placeholder {
+    color: #bbb;
+}
+
+button[type=submit] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+input[type=search] {
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+}
+
+.section-1-detail {
+    /* display: none; */
+    width: 550px;
+    position: absolute;
+    top: 300px;
+    left: 70px
+}
+
+
+
+.title {
+    font-size: 72px;
+    color: #deb37e;
+    font-weight: 800;
+    font-family: "Open Sans";
+    text-transform: uppercase;
+
+    filter: drop-shadow(2.575px -4.286px 2.5px rgba(84, 82, 79, 0.22));
+}
+
+.subtitle {
+    width: 469px;
+    height: 65px;
+    font-size: 25px;
+    letter-spacing: 5px;
+    color: #54524f;
+    font-weight: 700;
+    font-style: italic;
+    font-family: "Open Sans";
+    text-transform: uppercase;
+
+    /* text-align: center; */
+}
+
+
+.btn {
+    font-size: 25px;
+    color: #776c64;
+    font-weight: 800;
+    font-family: "Open Sans";
+    text-align: center;
+    text-transform: uppercase;
+    border: 0;
+    padding: 3px 25px;
+    border-radius: 1rem;
+    /* background-color: rgba(187, 187, 187, 0.399); */
+}
+
+.description {
+    width: 452px;
+    height: 130px;
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: #54524f;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Open Sans";
+}
+
+#about-title {
+    background-color: rgba(174, 0, 255, 0.203);
+    font-size: 24px;
+    padding: 10px 200px;
+    text-transform: uppercase;
+}
+
+.section-about {
+    /* display: none; */
+}
+
+#about-description {
+    text-align: justify;
+    padding: 50px 200px;
+}
+
+#about-viewImg {
+    text-align: center;
+    height: 500px;
+}
+
+
+#sliderBox {
+    display: inline-block;
+}
+
+@keyframes display {
+    0% {
+        opacity: .2;
+        top: 0;
+        left: 0;
+    }
+
+    10% {
+        opacity: 1;
+        top: 0;
+        left: 10px;
+
+    }
+
+    50% {
+        opacity: 1;
+        top: 0;
+        left: 15px;
+
+    }
+
+    80% {
+        opacity: 1;
+        top: 0;
+        left: 20px;
+    }
+
+    100% {
+        opacity: 0;
+        top: 0;
+        left: 25px;
+
+    }
+}
+
+.myDish>img {
+    position: relative;
+    /* transform: translateX(70%); */
+    animation: display 10s infinite;
+
+}
+
+img:nth-child(2) {
+    animation-delay: 2s;
+}
+
+img:nth-child(3) {
+    animation-delay: 4s;
+}
+
+img:nth-child(4) {
+    animation-delay: 6s;
+}
+
+img:nth-child(5) {
+    animation-delay: 8s;
+}
