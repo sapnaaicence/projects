@@ -31,20 +31,4 @@ function changePic() {
 
     x[slideIndex - 1].style.display = "block";
     // setTimeout(changePic, 2000);
-
 }
-
-
-
-
-
-
-function bazarJanaHai() {
-
-}
-
-setTimeout(bazarJanaHai, 20000)
-
-
-alarm1 = setInterval(bazarJanaHai, 20000)
-clearInterval(alarm1)

@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="tool-bar">
         <div id="col1">
             <img src="img/logo.png" id="logo" atl="No img" height="90px" width="90px" />
@@ -23,7 +22,46 @@
                     </li>
                     <li id="about"> <a href="about.html">About</a> </li>
                     <li id="gallery"><a href="gallery.html">gallery</a></li>
-                    <li id="booking"> <a href="about.html">book now</a></li>
+                    <li id="booking">
+                        <div class="dropdown">
+                            <button class="dropbtn">Book Now
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+
+                    <li id="contact"> <a href="about.html">Contact</a></li>
+                    <li>
+                        <div id="search-bar">
+                            <form>
+                                <input type="search" placeholder="Search...">
+                                <button type="submit">Search</button>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+    </div>
+    <!-- <div class="tool-bar">
+        <div id="col1">
+            <img src="img/logo.png" id="logo" atl="No img" height="90px" width="90px" />
+        </div>
+        <div id="col2">
+            <nav>
+                <ul>
+                    <li id="home">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li id="about"> <a href="about.html">About</a> </li>
+                    <li id="gallery"><a href="gallery.html">gallery</a></li>
+                    <li id="booking"> <a href="booking.html">book now</a></li>
                     <li id="contact"> <a href="about.html">Contact</a></li>
                 </ul>
             </nav>
@@ -34,7 +72,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="section-1">
 
 
@@ -52,17 +90,19 @@
                 to checkout from the cart. And done!!! The payment process is also simple. You can pay the money via
                 internet banking, wallets, credit cards, and debit cards.
             </div>
-            <div id="about-viewImg">
-                <div id="sliderBox">
-                    <div><img src="img/pawna-view.jpg" class="myDish" height="450px" width="800px" /></div>
-                    <div><img src="img/pawna-1.jpg" class="myDish" height="450px" width="800px" /></div>
-                    <div><img src="img/pawna-2.jpg" class="myDish" height="450px" width="800px" /></div>
-                    <div><img src="img/pawna-3.jpg" class="myDish" height="450px" width="800px" /></div>
-                    <div><img src="img/pawna-4.jpg" class="myDish" height="450px" width="800px" /></div>
-                </div>
+
+        </div>
+        <div class="about-viewImg">
+            <div class="sliderBox">
+                <div class="myDish"><img src="img/pawna-view.jpg" height="450px" width="800px" /></div>
+                <!-- <div class="myDish"><img src="img/pawna-1.jpg" height="450px" width="800px" /></div> -->
+                <div class="myDish"><img src="img/pawna-2.jpg" height="450px" width="800px" /></div>
+                <div class="myDish"><img src="img/pawna-3.jpg" height="450px" width="800px" /></div>
+                <div class="myDish"><img src="img/pawna-4.jpg" height="450px" width="800px" /></div>
             </div>
         </div>
     </div>
+
 
     <script src="script.js"></script>
 </body>
